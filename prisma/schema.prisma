@@ -30,19 +30,19 @@ model CheckIn {
   user    User   @relation(fields: [user_id], references: [id])
   user_id String
 
-  gyn    Gyn    @relation(fields: [gyn_id], references: [id])
-  gyn_id String
+  gym    Gym    @relation(fields: [gym_id], references: [id])
+  gym_id String
 
   @@map("chech_ins")
 }
 
-model Gyn {
+model Gym {
   id          String  @id @default(uuid())
   title       String
   description String?
   phone       String?
   latitude    Decimal
-  longitudo   Decimal
+  longitude   Decimal
 
   CheckIns CheckIn[]
 
